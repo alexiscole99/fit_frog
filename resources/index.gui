@@ -2,7 +2,8 @@
   <image id="walk-icon" x="112" y="10%" width="75" height="75" href="walk-icon.png" />
   <text id="speed" x="50%" y="55%" class="larger-value" text-length="32" fill="white" text-anchor="middle">Speed</text>
   <text id="hrm" x="50%" y="74%" class="large-value" text-length="32" fill="white" text-anchor="middle">Heart</text>
-  <text id="gaytime" x="50%" y="90%" class="large-value" text-length="32" fill="white" text-anchor="middle">GayTime</text>
+  <text id="gaytimetext1" x="50%" y="86%" class="large-value" text-length="32" fill="white" text-anchor="middle"></text>
+  <text id="gaytimetext2" x="50%" y="100%" class="large-value" text-length="32" fill="white" text-anchor="middle"></text>
   <!--text id="updated" x="50%" y="92%" class="updated" text-length="32" fill="white" text-anchor="middle">now!</text-->
   <svg id="pride" display="none">
     <rect id="pridered" y="0%"   x="0" width="100%" height="16%" fill="red">
@@ -35,19 +36,20 @@
         <animate attributeName="y" begin="enable" from="10%" to="60%" dur=".5"/>
         <animate attributeName="y" begin="enable+.5" from="60%" to="10%" dur=".5"/>
         <animate attributeName="y" begin="enable+1" from="10%" to="60%" dur=".5"/>
+        <animate attributeName="y" begin="enable+1.5" from="60%" to="10%" dur=".5"/>
+    </textarea>
+    <textarea id="gayModeLabel" x="25" y="25" width="100%-50" text-length="32" fill="white" text-anchor="middle" display-align="before" font-weight="regular">gay walking mode activated!
+      <animate attributeName="y" begin="enable" from="10%" to="60%" dur=".5"/>
+      <animate attributeName="y" begin="enable+.5" from="60%" to="10%" dur=".5"/>
+      <animate attributeName="y" begin="enable+1" from="10%" to="60%" dur=".5"/>
       <animate attributeName="y" begin="enable+1.5" from="60%" to="10%" dur=".5"/>
     </textarea>
-    <textarea id="gayModeLabel" x="25" y="25" width="100%-50" text-length="32" fill="white" text-anchor="middle" display-align="before"           font-weight="regular">gay walking mode activated!
-        <animate attributeName="y" begin="enable" from="10%" to="60%" dur=".5"/>
-        <animate attributeName="y" begin="enable+.5" from="60%" to="10%" dur=".5"/>
-        <animate attributeName="y" begin="enable+1" from="10%" to="60%" dur=".5"/>
-      <animate attributeName="y" begin="enable+1.5" from="60%" to="10%" dur=".5"/>
-    </textarea>
+
     <image id="frog" x="130" y="100" width="40" height="40" href="frog-face.png">
-        <animate attributeName="y" begin="enable" from="35%" to="85%" dur=".5"/>
-        <animate attributeName="y" begin="enable+.5" from="85%" to="35%" dur=".5"/>
-        <animate attributeName="y" begin="enable+1" from="35%" to="85%" dur=".5"/>
-        <animate attributeName="y" begin="enable+1.5" from="85%" to="35%" dur=".5"/>
+      <animate attributeName="y" begin="enable" from="35%" to="85%" dur=".5"/>
+      <animate attributeName="y" begin="enable+.5" from="85%" to="35%" dur=".5"/>
+      <animate attributeName="y" begin="enable+1" from="35%" to="85%" dur=".5"/>
+      <animate attributeName="y" begin="enable+1.5" from="85%" to="35%" dur=".5"/>
     </image>
   </svg>
 </svg>

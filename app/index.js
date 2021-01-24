@@ -5,10 +5,14 @@ import exercise from "exercise";
 // Fetch UI elements we will need to change
 let hrLabel = document.getElementById("hrm");
 //let updatedLabel = document.getElementById("updated");
-let gayTimeLabel = document.getElementById("gaytime");
+let gayTimeLabel = document.getElementById("gaytimetext1");
+let gayTimeLabel2 = document.getElementById("gaytimetext2");
 let speedLabel = document.getElementById("speed");
 let enableFlag = false;
+let lastValueTimestamp = undefined;
+let firstLoad = true;
 
+var frog = document.getElementById("frog");
 // Keep a timestamp of the last reading received. Start when the app is started.
 let lastValueTimestamp = Date.now();
 
@@ -32,17 +36,12 @@ function convertMsAgoToString(millisecondsAgo) {
 
 // This function updates the label on the display that shows when data was last updated.
 function updateDisplay() {
-  // if (lastValueTimestamp !== undefined) {
-  //   updatedLabel.text = convertMsAgoToString(Date.now() - lastValueTimestamp);
-  // }
   
   if (exercise && exercise.stats) {
     //change icon
     document.getElementById("walk-icon").href="gay-walk.png";
     const speed = exercise.stats.speed.current;
-    const pace = exercise.stats.pace;
     console.log("speed" + speed);
-    console.log("pace" + speed);
     //Update screen
     speedLabel.text = (speed===undefined) ? "0 m/s" : speed+" m/s" ;
     
@@ -50,11 +49,14 @@ function updateDisplay() {
     //Average speed for 20-29 year olds is 1.34 to 1.36 m/s
     //threshold at 0.5m/s though because kinda hard to walk inside
     if (speed >= 0.5) {
+      if(firstLoad) { lastValueTimestamp = Date.now(); }
+      firstLoad = false;
       console.log("pride")
-      if (lastValueTimestamp == undefined) {
+      if (lastValueTimestamp === undefined) {
         lastValueTimestamp = Date.now();
       }
       gayTimeLabel.text = convertMsAgoToString(Date.now() - lastValueTimestamp);
+      gayTimeLabel2.text = "";
       
       let pride = document.getElementById("pride");
       pride.style.display = "inline";
@@ -83,10 +85,6 @@ function updateDisplay() {
         var frog = document.getElementById("frog");
         frog.animate("enable");
 
-        // hide background writing
-        hrLabel.style.display = "none";
-        // updatedLabel.style.display = "none";
-        speedLabel.style.display = "none";
       }
       else {
         enableFlag = false;
@@ -94,8 +92,9 @@ function updateDisplay() {
       
     }
     else {
-      if (lastValueTimestamp !== undefined) {
-        gayTimeLabel.text = "Last gay walk lasted: " + convertMsAgoToString(Date.now() - lastValueTimestamp) + "!";
+      if (lastValueTimestamp && !firstLoad) {
+        gayTimeLabel.text = "Last gay walk:";
+        gayTimeLabel2.text = convertMsAgoToString(Date.now() - lastValueTimestamp);
         lastValueTimestamp = undefined
       }
       let pride = document.getElementById("pride");
@@ -104,12 +103,9 @@ function updateDisplay() {
       var gaymode = document.getElementById("gaymode");
       gaymode.style.display = "none";
       hrLabel.style.display = "inline";
-      updatedLabel.style.display = "inline";
       speedLabel.style.display = "inline";
     }
-    
-    
-    
+   
   }
 }
 
@@ -121,7 +117,6 @@ hrm.onreading = function() {
   // Peek the current sensor values
   console.log("Current heart rate: " + hrm.heartRate);
   hrLabel.text = "♥ " + hrm.heartRate;
-  lastValueTimestamp = undefined
 }
 
 // Begin monitoring the sensor
@@ -133,6 +128,12 @@ setInterval(updateDisplay, 1000);
 
 //Begin an exercise automatically
 exercise.start("walk", { gps: false });
-if (exercise.state === "started") {
-   //exercise.stop();
+
+document.onkeypress = function(e) {
+  console.log("Key pressed: " + e.key);
+
+  if (e.key==="up") {
+      exercise.stop();
+      me.exit();
+  }
 }
