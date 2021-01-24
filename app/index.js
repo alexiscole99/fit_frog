@@ -56,6 +56,7 @@ function updateDisplay() {
         lastValueTimestamp = Date.now();
       }
       gayTimeLabel.text = convertMsAgoToString(Date.now() - lastValueTimestamp);
+      gayTimeLabel2.text = "";
       
       let pride = document.getElementById("pride");
       pride.style.display = "inline";
