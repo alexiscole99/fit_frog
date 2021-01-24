@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "@fitbit/sdk": "~4.2.0"
+  },
+  "fitbit": {
+    "appUUID": "c8a6ecde-abc2-46de-9959-66bd69e42c78",
+    "appType": "app",
+    "appDisplayName": "Fit Frogs 2",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#607d8b",
+    "requestedPermissions": [
+      "access_heart_rate",
+      "access_activity",
+      "access_user_profile",
+      "access_location",
+      "run_background",
+      "access_exercise"
+    ],
+    "buildTargets": [
+      "mira"
+    ],
+    "i18n": {
+      "en-US": {
+        "name": "Fit Frogs 2"
+      }
+    },
+    "defaultLanguage": "en-US"
+  }
+}

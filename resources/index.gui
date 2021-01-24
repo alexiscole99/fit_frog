@@ -1,0 +1,6 @@
+<svg>
+
+  <text id="speed" x="50%" y="50%" class="large-value" text-length="32" fill="white" text-anchor="middle">Speed</text>
+  <text id="hrm" x="50%" y="72%" class="large-value" text-length="32" fill="white" text-anchor="middle">42</text>
+  <text id="updated" x="50%" y="92%" class="updated" text-length="32" fill="white" text-anchor="middle">now!</text>
+</svg>

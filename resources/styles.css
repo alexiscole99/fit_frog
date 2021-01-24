@@ -1,0 +1,35 @@
+.sensor-label {
+  font-family: System-Regular;
+  fill: white;
+  text-anchor: middle;
+  text-length: 32;
+  font-size: 20;
+  x: 50%;
+  y: $+5;
+}
+
+.sensor-data {
+  font-family: System-Light;
+  fill: yellow;
+  text-anchor: middle;
+  text-length: 64;
+  font-size: 20;
+  x: 50%;
+  y: $;
+}
+
+svg {
+  viewport-fill: fb-cyan;
+}
+
+.large-value {
+  font-family: Seville-Book;
+  font-size: 120;
+  fill: #F80070;
+}
+
+.updated {
+  font-family: Seville-Book;
+  font-size: 64;
+  fill: #ffffff;
+}
