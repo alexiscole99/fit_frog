@@ -42,7 +42,7 @@ function updateDisplay() {
     const speed = exercise.stats.speed.current;
     const pace = exercise.stats.pace;
     console.log("speed" + speed);
-    console.log("pace" + speed);
+    console.log("pace" + pace);
     //Update screen
     speedLabel.text = (speed===undefined) ? "0 m/s" : speed+" m/s" ;
     
@@ -105,7 +105,6 @@ function updateDisplay() {
       var gaymode = document.getElementById("gaymode");
       gaymode.style.display = "none";
       hrLabel.style.display = "inline";
-      updatedLabel.style.display = "inline";
       speedLabel.style.display = "inline";
     }
    
@@ -131,6 +130,12 @@ setInterval(updateDisplay, 1000);
 
 //Begin an exercise automatically
 exercise.start("walk", { gps: false });
-if (exercise.state === "started") {
-   //exercise.stop();
+
+document.onkeypress = function(e) {
+  console.log("Key pressed: " + e.key);
+
+  if (e.key==="up") {
+      exercise.stop();
+      me.exit();
+  }
 }
