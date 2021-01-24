@@ -1,6 +1,25 @@
 <svg>
-
   <text id="speed" x="50%" y="50%" class="large-value" text-length="32" fill="white" text-anchor="middle">Speed</text>
   <text id="hrm" x="50%" y="72%" class="large-value" text-length="32" fill="white" text-anchor="middle">42</text>
   <text id="updated" x="50%" y="92%" class="updated" text-length="32" fill="white" text-anchor="middle">now!</text>
+  <svg id="pride" display="none">
+    <rect id="pridered" y="0%"   x="0" width="100%" height="16%" fill="red">
+      <animate attributeName="x"  begin="enable" from="100%" to="0%" dur="1" />
+    </rect>
+    <rect id="prideorange" y="16%" x="0" width="100%" height="17%" fill="orange">
+      <animate attributeName="x"  begin="enable" from="0%" to="100%" dur="1" />
+    </rect>
+    <rect id="prideyellow"y="33%" x="0" width="100%" height="17%" fill="yellow">
+      <animate attributeName="x"  begin="enable" from="100%" to="0%" dur="1" />
+    </rect>
+    <rect id="pridegreen" y="50%" x="0" width="100%" height="17%" fill="green">
+      <animate attributeName="x"  begin="enable" from="0%" to="100%" dur="1" />
+    </rect>
+    <rect id="prideblue" y="66%" x="0" width="100%" height="17%" fill="blue">
+      <animate attributeName="x"  begin="enable" from="100%" to="0%" dur="1" />
+     </rect>
+    <rect id="pridepurple" y="83%" x="0" width="100%" height="17%" fill="purple">
+      <animate attributeName="x"  begin="enable" from="0%" to="100%" dur="1" />
+    </rect>
+  </svg>
 </svg>

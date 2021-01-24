@@ -35,27 +35,43 @@ function updateDisplay() {
   }
   
   if (exercise && exercise.stats) {
-    console.log(JSON.stringify(exercise, null, 2));
+    //console.log(JSON.stringify(exercise, null, 2));
     const speed = exercise.stats.speed.current;
-    console.log(speed);
-    speedLabel.text = (speed.value===undefined) ? "0 mph" : speed.value+" mph" ;
-    // this.lblSpeedUnits.text = `speed ${speed.units}`;
-
-  //   const speedAvg = utils.formatSpeed(exercise.stats.speed.average);
-  //   this.lblSpeedAvg.text = speedAvg.value;
-  //   this.lblSpeedAvgUnits.text = `speed avg ${speedAvg.units}`;
-
-  //   const speedMax = utils.formatSpeed(exercise.stats.speed.max);
-  //   this.lblSpeedMax.text = speedMax.value;
-  //   this.lblSpeedMaxUnits.text = `speed max ${speedMax.units}`;
-
-  //   const distance = utils.formatDistance(exercise.stats.distance);
-  //   this.lblDistance.text = distance.value;
-  //   this.lblDistanceUnits.text = `distance ${distance.units}`;
-
-  //   this.lblActiveTime.text = utils.formatActiveTime(exercise.stats.activeTime);
-
-  //   this.lblCalories.text = utils.formatCalories(exercise.stats.calories);
+    const pace = exercise.stats.pace;
+    console.log("speed" + speed);
+    console.log("pace" + speed);
+    //Update screen
+    speedLabel.text = (speed===undefined) ? "0 m/s" : speed+" m/s" ;
+    
+    //Check if gay mode
+    //Average speed for 20-29 year olds is 1.34 to 1.36 m/s
+    //threshold at 0.5m/s though because kinda hard to walk inside
+    if (speed >= 0.5) {
+      console.log("pride")
+      let pride = document.getElementById("pride");
+      pride.style.display = "inline";
+      
+      //Animate kinda bad tho LOL 
+      var pridered = document.getElementById("pridered");
+      pridered.animate("enable"); 
+      var prideorange = document.getElementById("prideorange");
+      prideorange.animate("enable"); 
+      var prideyellow = document.getElementById("prideyellow");
+      prideyellow.animate("enable"); 
+      var pridegreen = document.getElementById("pridegreen");
+      pridegreen.animate("enable"); 
+      var prideblue = document.getElementById("prideblue");
+      prideblue.animate("enable"); 
+      var pridepurple = document.getElementById("pridepurple");
+      pridepurple.animate("enable"); 
+    }
+    else {
+      let pride = document.getElementById("pride");
+      pride.style.display = "none";
+    }
+    
+    
+    
   }
 }
 
