@@ -50,6 +50,8 @@ function updateDisplay() {
       console.log("pride")
       let pride = document.getElementById("pride");
       pride.style.display = "inline";
+      let gaymode = document.getElementById("gaymode");
+      gaymode.style.display = "inline";
       
       //Animate kinda bad tho LOL 
       var pridered = document.getElementById("pridered");
@@ -64,10 +66,25 @@ function updateDisplay() {
       prideblue.animate("enable"); 
       var pridepurple = document.getElementById("pridepurple");
       pridepurple.animate("enable"); 
+      var gayModeLabel = document.getElementById("gayModeLabel");
+      gayModeLabel.animate("enable");
+      var frog = document.getElementById("frog");
+      frog.animate("enable");
+      
+      // hide background writing
+      hrLabel.style.display = "none";
+      updatedLabel.style.display = "none";
+      speedLabel.style.display = "none";
+      
     }
     else {
       let pride = document.getElementById("pride");
       pride.style.display = "none";
+      var gaymode = document.getElementById("gaymode");
+      gaymode.style.display = "none";
+      hrLabel.style.display = "inline";
+      updatedLabel.style.display = "inline";
+      speedLabel.style.display = "inline";
     }
     
     

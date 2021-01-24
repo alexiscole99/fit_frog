@@ -22,4 +22,14 @@
       <animate attributeName="x"  begin="enable" from="0%" to="100%" dur="1" />
     </rect>
   </svg>
+  <svg id="gaymode" display="none">
+    <textarea id="gayModeLabel" x="25" y="25" width="100%-50" text-length="32" fill="white" text-anchor="middle" display-align="before"           font-weight="bold">gay walking mode activated!
+        <animate attributeName="y" begin="enable" from="15%" to="65%" dur=".5"/>
+        <animate attributeName="y" begin="enable+.5" from="65%" to="15%" dur=".5"/>
+    </textarea>
+    <image id="frog" x="130" y="100" width="40" height="40" href="frog-face.png">
+        <animate attributeName="y" begin="enable" from="45%" to="95%" dur=".5"/>
+        <animate attributeName="y" begin="enable+.5" from="95%" to="45%" dur=".5"/>
+    </image>
+  </svg>
 </svg>
